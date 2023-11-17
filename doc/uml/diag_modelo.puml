@@ -1,0 +1,89 @@
+@startuml
+class Armario {
+- int LIMITE_BALDAS
+- Balda balda1
+- Balda balda2
+- Balda balda3
+- Balda balda4
++ <<Create>> Armario()
++ Balda getBalda(int)
++ int getCantidadArticulos()
++ int getCapacidadArticulos()
++ Posicion estaArticulo(String)
++ Posicion insertarArticulo(Articulo)
++ boolean insertarArticulo(Articulo,Posicion)
++ Posicion sacarArticulo(String)
++ void pintar()
+}
+class Articulo {
+- String id
+- String nombre
+- double precio
++ <<Create>> Articulo(String,String,double)
++ <<Create>> Articulo()
++ String getId()
++ void setId(String)
++ String getNombre()
++ void setNombre(String)
++ double getPrecio()
++ void setPrecio(double)
++ String toString()
+}
+class Balda {
+- int LIMITE_CELDAS
+- Celda celda1
+- Celda celda2
+- Celda celda3
+- Celda celda4
+- Celda celda5
++ <<Create>> Balda()
++ int getCantidadCeldas()
++ Celda getCelda(int)
++ int getCantidadArticulos()
++ int getCapacidadArticulos()
++ boolean haySitio()
++ int estaArticulo(String)
++ int insertarArticulo(Articulo)
++ boolean insertarArticulo(Articulo,int)
++ int sacarArticulo(String)
++ void pintar()
+}
+class Celda {
+- int LIMITE_ARTICULOS
+- int cantidadArticulos
+- Articulo articulo1
+- Articulo articulo2
+- Articulo articulo3
+- Articulo articulo4
++ <<Create>> Celda()
++ int getCapacidadArticulos()
++ void setArticulo(Articulo,int)
++ Articulo getArticulo(int)
++ int getCantidadArticulos()
+- boolean esArticulo(String,int)
+- boolean estaVacio(int)
++ boolean haySitio()
++ boolean estaArticulo(String)
++ boolean insertarArticulo(Articulo)
++ boolean sacarArticulo(String)
++ void pintar()
+}
+class Posicion {
+- int numeroBalda
+- int numeroCelda
++ <<Create>> Posicion(int,int)
++ int getNumeroBalda()
++ void setNumeroBalda(int)
++ int getNumeroCelda()
++ void setNumeroCelda(int)
++ String toString()
+}
+
+Armario *-> Balda
+Balda *-> Celda
+Celda *-down-> Articulo
+Armario .down.> Posicion
+Armario .down.> Articulo
+Balda ..> Articulo
+
+@enduml

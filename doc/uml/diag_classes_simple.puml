@@ -1,0 +1,36 @@
+@startuml
+class Loader {
+}
+class Armario {
+}
+class App {
+}
+class Articulo {
+}
+class Gui {
+}
+class Balda {
+}
+class Celda {
+}
+class Main {
+}
+class Posicion {
+}
+
+Main .down.> App
+App -down-> Armario
+App .left.> Loader
+App .right.> Gui
+Armario *-> Balda
+Balda *-> Celda
+Celda *-down-> Articulo
+Armario .up.> Posicion
+Armario .down.> Articulo
+Gui .down.> Posicion
+Gui .down.> Articulo
+Balda ..> Articulo
+App ..> Posicion
+App ..> Articulo
+
+@enduml
