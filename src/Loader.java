@@ -1,8 +1,5 @@
 import java.util.Random;
 
-/**
- * Clase que carga el armario con artículos de forma un tanto aleatoria.
- */
 public class Loader {
 
     // region constantes
@@ -19,16 +16,6 @@ public class Loader {
     private static Random generadorAleatorio;
     // endregion
 
-    /**
-     * Carga el armario con hasta NUM_ARTICULOS_INI artículos.
-     * Los artículos se insertan en posiciones aleatorias del armario.
-     * Los artículos se crean con un precio aleatorio entre MIN_PRECIO y MAX_PRECIO.
-     * Los artículos se crean con un id secuencial único.
-     * Los artículos se crean con un nombre compuesto por el tipo y el id.
-     * Los artículos se crean con un tipo aleatorio entre los 6 tipos de artículos.
-     * Los artículos se crean con una posición aleatoria entre las 4 baldas y las 5 celdas.
-     * @param armario referencia al objeto sobre el que se cargan los artículos.
-     */
     public static void cargarDatos(Armario armario) {
         Articulo articulo;
         boolean b;
@@ -55,36 +42,23 @@ public class Loader {
     }
 
     // region métodos privados
-
-
-    /**
-     * Devuelve un número aleatorio entre 1 y "hasta" ambos inclusive.
-     * @param hasta límite superior del número aleatorio.
-     * @return número aleatorio entre 1 y "hasta" ambos inclusive.
-     */
     private static int getAleatorio(int hasta) {
-        // TODO: 21 - Genera un número aleatorio entre 1 y "hasta" ambos inclusive utilizando la clase Random
-        return 0;
+        return generadorAleatorio.nextInt(hasta) + 1;
     }
 
-    /**
-     * Devuelve un número aleatorio entre MIN_PRECIO y MAX_PRECIO ambos inclusive.
-     * @return número aleatorio entre MIN_PRECIO y MAX_PRECIO ambos inclusive.
-     */
     private static int getAleatorio() {
-        // TODO: 22 - Genera un número aleatorio entre MIN_PRECIO y MAX_PRECIO ambos inclusive utilizando la clase Random
-        return 0;
+        return generadorAleatorio.nextInt(MIN_PRECIO, MAX_PRECIO + 1);
     }
 
-    /**
-     * Devuelve el nombre del tipo de artículo en función del número recibido.
-     * @param tipo número del tipo de artículo, ej. 3
-     * @return nombre del tipo de artículo, ej. TABLE
-     */
     private static String getTipoArticulo(int tipo) {
-        // TODO: 23 - Devuelve el nombre del tipo de artículo en función del número recibido.
-        // 1 -> RELOJ, 2 -> MOVIL, 3 -> TABLE, 4 -> EBOOK, 5 -> LAMPA, 6 -> CAMAR
-        return "";
+        switch (tipo) {
+            case 1: return "RELOJ";
+            case 2: return "MOVIL";
+            case 3: return "TABLE";
+            case 4: return "EBOOK";
+            case 5: return "LAMPA";
+            default: return "CAMAR";
+        }
     }
     // endregion
 

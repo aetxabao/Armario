@@ -6,22 +6,16 @@ public class Articulo {
     private double precio;
     // endregion
 
+
     // region constructores
-    /**
-     * Constructor con parámetros
-     * @param id identificador del artículo, ej. EBOOK16
-     * @param nombre nombre del artículo, ej. Artículo 16
-     * @param precio precio del artículo, ej. 100
-     */
     public Articulo(String id, String nombre, double precio) {
-        // TODO: 31 - Inicializa los atributos con los parámetros pasados. El id se guarda en mayúsculas.
+        this.id = id.toUpperCase();
+        this.nombre = nombre;
+        this.precio = precio;
     }
 
-    /**
-     * Constructor sin parámetros
-     */
     public Articulo() {
-        // TODO: 32 - Inicializa los atributos utilizando this() con cadenas vacías y valores a cero.
+        this("", "", 0.0);
     }
     // endregion
 
@@ -53,13 +47,8 @@ public class Articulo {
 
     // endregion
 
-    /**
-     * Devuelve una cadena sólo con el id. ej. EBOOK16
-     * @return cadena sólo con el id. ej. EBOOK16
-     */
     @Override
     public String toString() {
-        // TODO: 33 - Devuelve una cadena sólo con el id. ej. EBOOK16
         return id;
     }
 

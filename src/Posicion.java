@@ -1,17 +1,11 @@
-/**
- * Clase Posicion
- */
 public class Posicion {
 
     private int numeroBalda;
     private int numeroCelda;
 
     public Posicion(int numeroBalda, int numeroCelda) {
-        // TODO: 41 - Constructor con parámetros utilizando this.
-    }
-
-    public Posicion() {
-        // TODO: 42 - Constructor sin parámetros que inicializa la balda y la celda a 0 utilizando this().
+        this.numeroBalda = numeroBalda;
+        this.numeroCelda = numeroCelda;
     }
 
     // region getter y setter
@@ -32,13 +26,11 @@ public class Posicion {
     }
     // endregion
 
-    /**
-     * Devuelve una cadena con el número de balda y el número de celda, ej. balda 3 celda 2
-     * @return cadena con el número de balda y el número de celda, ej. balda 3 celda 2
-     */
+//    public String toString() {
+//        return "(" + numeroBalda + "," + numeroCelda + ")";
+//    }
     public String toString() {
-        // TODO: 43 - Devuelve una cadena con el número de balda y el número de celda, ej. balda 3 celda 2
-        return "";
+        return "balda " + numeroBalda + " celda " + numeroCelda;
     }
 
 }
